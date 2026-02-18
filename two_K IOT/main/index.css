@@ -1,0 +1,194 @@
+ :root {
+      --bg: #0b0f14;
+      --bg-2: #111927;
+      --card: #131c2b;
+      --card-2: #0f1724;
+      --text: #e6edf7;
+      --muted: #a7b3c6;
+      --accent: #6be4ff;
+      --accent-2: #7b7bff;
+      --ring: rgba(107, 228, 255, 0.35);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(123, 123, 255, 0.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(107, 228, 255, 0.18), transparent 65%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    header.hero {
+      padding: 28px 28px 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(19, 28, 43, 0.9), rgba(15, 23, 36, 0.8));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 14px 0 8px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.6vw, 18px);
+      max-width: 800px;
+    }
+
+    .controls {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: center;
+      background: rgba(10, 15, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .field {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .field:focus-within {
+      border-color: rgba(107, 228, 255, 0.6);
+      box-shadow: 0 0 0 3px var(--ring);
+      transform: translateY(-1px);
+    }
+
+    .field input,
+    .field select {
+      appearance: none;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      width: 100%;
+      font-size: 15px;
+      outline: none;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    }
+
+    .field input::placeholder {
+      color: var(--muted);
+    }
+
+    .field select {
+      cursor: pointer;
+    }
+
+    .select-arrow {
+      margin-left: 10px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .grid {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: linear-gradient(135deg, rgba(19, 28, 43, 0.9), rgba(15, 23, 36, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px 16px 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(107, 228, 255, 0.35);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    @media (max-width: 640px) {
+      .meta {
+        text-align: left;
+      }
+    }
